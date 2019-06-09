@@ -1,5 +1,24 @@
 # hackerrank-survey-vis
 
+📊 Data visualisation for the 2018 HackRank Survey.
+
+🖖 Implemented with Vue!
+
+👇 Check it out 👇
+
+https://hackerrank-survey-vis.qingqi.dev
+
+## Features
+
+- Heatmap of the survey participants based on their country
+- Date range picker to filter by the time participants completed the survey
+- Sorted table of data
+
+## Limitations
+
+- Not really responsive, only supports desktop browsers
+- Only tested on modern browsers, probably not compatible with IE
+
 ## Project setup
 ```
 npm install
