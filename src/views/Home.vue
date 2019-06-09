@@ -1,18 +1,54 @@
 <template>
   <div class="home">
-    <img alt="Vue logo" src="../assets/logo.png" />
-    <HelloWorld msg="Welcome to Your Vue.js App" />
+    <h1>HackerRank 2018 Survey Participants</h1>
+    <a
+      href="https://research.hackerrank.com/developer-skills/2018/"
+      target="blank"
+    >
+      https://research.hackerrank.com/developer-skills/2018/
+    </a>
+    <map-vis :counts="countsData" :countries="countriesData" />
   </div>
 </template>
 
 <script>
-// @ is an alias to /src
-import HelloWorld from "@/components/HelloWorld.vue";
+import MapVis from "@/components/MapVis.vue";
 
 export default {
-  name: "home",
-  components: {
-    HelloWorld
+  name: "Home",
+  components: { MapVis },
+  data: () => ({
+    countriesData: {},
+    countsData: []
+  }),
+  mounted() {
+    this.fetchData();
+  },
+  methods: {
+    async fetchData() {
+      const res = await fetch("data.json");
+      const result = await res.json();
+
+      this.countriesData = result.countries;
+      this.countsData = result.counts;
+    }
   }
 };
 </script>
+
+<style lang="scss">
+.home {
+  h1 {
+    font-size: 3rem;
+    margin-bottom: 0.2rem;
+  }
+
+  a {
+    display: block;
+    font-size: 1.5rem;
+    margin: 0 0 4rem;
+    color: white;
+    text-decoration-color: white;
+  }
+}
+</style>
