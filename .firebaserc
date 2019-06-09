@@ -1,0 +1,14 @@
+{
+  "projects": {
+    "default": "shiqingqi-27cab"
+  },
+  "targets": {
+    "shiqingqi-27cab": {
+      "hosting": {
+        "hackerrank-survey-vis": [
+          "hackerrank-survey-vis"
+        ]
+      }
+    }
+  }
+}
