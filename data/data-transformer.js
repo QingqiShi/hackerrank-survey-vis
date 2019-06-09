@@ -48,11 +48,6 @@ data.forEach((row, i) => {
 
 const sortedCounts = counts.sort((a, b) => a.date - b.date);
 
-console.log(
-  sortedCounts[sortedCounts.length - 1].date,
-  new Date(sortedCounts[sortedCounts.length - 1].date)
-);
-
 fs.writeFileSync(
   path.join(__dirname, "../public/data.json"),
   JSON.stringify({ counts: sortedCounts, countries })
